@@ -7,9 +7,12 @@ options = {}
 
 opt_parser = OptionParser.new do |opt|
   opt.banner = "Bearclaws"
-  opt.separator  "Analyze your AWS-Allocated-Cost spreadsheet by a specified tag"
+  opt.separator  "Analyze the output of you AWS cost allocation report. Group your costs by an arbitrary tag"
   opt.separator  ""
-  opt.separator  "bearclaws [CSV] [TAG_COLUMN] [OPTIONS] --- "
+  opt.separator  "bearclaws [CSV_FILE] [TAG_COLUMN] [OPTIONS]"
+  opt.separator  ""
+  opt.separator  "[CSV_FILE]   --- Path to an AWS cost allocation report (e.g. 93795-aws-cost-allocation-2013-09.csv)"
+  opt.separator  "[TAG_COLUMN] --- The (zero-indexed) column in the report that holds your tag"
   opt.separator  ""
   opt.separator  "Options"
 

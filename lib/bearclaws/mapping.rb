@@ -1,10 +1,12 @@
 module Bearclaws
+
+  # The mappings for a nomal AWS cost allocation report
   AWSMAP = {
     :invoice_id => 0,
     :payer_account_id => 1,
     :linked_account_id => 2,
-    :record_type => 3,
-    :record_id => 4,
+    :charge_type => 3,
+    :charge_id => 4,
     :billing_period_start_date => 5,
     :billing_period_end_date => 6,
     :invoice_date => 7,
@@ -14,7 +16,7 @@ module Bearclaws
     :payer_po_number => 11,
     :product_code => 12,
     :product_name => 13,
-    :seller_of_record => 14,
+    :seller_of_charge => 14,
     :usage_type => 15,
     :operation => 16,
     :availability_zone => 17,

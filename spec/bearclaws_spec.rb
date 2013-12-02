@@ -40,10 +40,10 @@ describe Bearclaws do
         x.should be_a Array
       end
 
-      it "each group should contain some records" do
+      it "each group should contain some charges" do
         x = Bearclaws.analyze File.open('spec/support/input.csv'), 30
         x.each { |y|
-          y.records.should_not be_empty
+          y.charges.should_not be_empty
         }
       end
 

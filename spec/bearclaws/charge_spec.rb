@@ -1,10 +1,10 @@
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe Bearclaws::Record do
+describe Bearclaws::Charge do
 
   describe 'attrs' do
     it "are decided by AWSMAP" do
-      r = Bearclaws::Record.new
+      r = Bearclaws::Charge.new
       Bearclaws::AWSMAP.each do |k, v|
         r.should respond_to k
       end
@@ -13,13 +13,13 @@ describe Bearclaws::Record do
 
   describe 'constructor' do
     it "should attempt to hydrate all attrs by the AWSMAP" do
-      record = []
+      charge = []
       Bearclaws::AWSMAP.each do |k, v|
         q = 'value'
-        record.should_receive(:[]).with(v).and_return q
-        Bearclaws::Record.any_instance.should_receive(:send).with("#{k}=", q)
+        charge.should_receive(:[]).with(v).and_return q
+        Bearclaws::Charge.any_instance.should_receive(:send).with("#{k}=", q)
       end
-      Bearclaws::Record.new record
+      Bearclaws::Charge.new charge
     end
   end
 end
