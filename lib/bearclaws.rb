@@ -14,8 +14,8 @@ module Bearclaws
 
     rows = CSV.read csv_path
 
-    rows.shift(2) # instructions, column labels
-    rows.pop(3)   # subtotal, total, footer
+    rows.shift(2) # remove instructions, column labels
+    rows.pop(3)   # remove subtotal, total, footer
 
     rows.each do |row|
       name = (row[group_column].nil?) ? :default : row[group_column]

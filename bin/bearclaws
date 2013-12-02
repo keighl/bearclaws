@@ -9,7 +9,7 @@ opt_parser = OptionParser.new do |opt|
   opt.banner = "Bearclaws"
   opt.separator  "Analyze your AWS-Allocated-Cost spreadsheet by a specified tag"
   opt.separator  ""
-  opt.separator  "bearclaws [CSV] [AWS TAG] [OPTIONS] --- "
+  opt.separator  "bearclaws [CSV] [TAG_COLUMN] [OPTIONS] --- "
   opt.separator  ""
   opt.separator  "Options"
 

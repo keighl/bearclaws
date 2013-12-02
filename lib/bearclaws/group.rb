@@ -1,4 +1,5 @@
 module Bearclaws
+
   class Group
     attr_accessor :name
     attr_accessor :records
