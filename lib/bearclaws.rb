@@ -4,15 +4,15 @@ require 'bearclaws/record'
 
 module Bearclaws
 
-  def self.analyze(csv_path = nil, group_column = nil)
+  def self.analyze(file = nil, group_column = nil)
 
-    raise "No CSV path supplied!" unless csv_path
+    raise "No file supplied!" unless file
     raise "No CSV group column supplied!" unless group_column
     raise "Group column must be an integer!" unless group_column.is_a? Integer
 
     groups = { default: Bearclaws::Group.new(:default) }
 
-    rows = CSV.read csv_path
+    rows = CSV.parse file.read
 
     rows.shift(2) # remove instructions, column labels
     rows.pop(3)   # remove subtotal, total, footer
