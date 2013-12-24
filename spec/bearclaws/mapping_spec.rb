@@ -4,7 +4,7 @@ describe Bearclaws do
 
   it "mapping is correct" do
 
-    Bearclaws::AWSMAP.should eq({
+    expect(Bearclaws::AWSMAP).to eq({
       :invoice_id => 0,
       :payer_account_id => 1,
       :linked_account_id => 2,

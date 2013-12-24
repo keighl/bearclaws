@@ -23,11 +23,4 @@ Gem::Specification.new do |gem|
   gem.name          = "bearclaws"
   gem.require_paths = ["lib"]
   gem.version       = Bearclaws::VERSION
-
-  gem.add_development_dependency('rspec')
-  gem.add_development_dependency('guard-rspec', '4.0.4')
-  gem.add_development_dependency('rb-fsevent')
-  gem.add_development_dependency('yard')
-  gem.add_development_dependency('redcarpet')
-  gem.add_development_dependency('rake')
 end

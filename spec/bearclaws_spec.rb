@@ -7,21 +7,21 @@ describe Bearclaws do
 
     context 'failures' do
       it "raises when no CSV path is supplied" do
-        lambda {
+        expect(lambda {
           Bearclaws.analyze nil
-        }.should raise_error
+        }).to raise_error
       end
 
       it "raises when no group column is supplied" do
-        lambda {
+        expect(lambda {
           Bearclaws.analyze File.open('spec/support/input.csv')
-        }.should raise_error
+        }).to raise_error
       end
 
       it "raises when group column is not an integer" do
-        lambda {
+        expect(lambda {
           Bearclaws.analyze File.open('spec/support/input.csv'), 'cheese'
-        }.should raise_error
+        }).to raise_error
       end
     end
 
@@ -37,13 +37,13 @@ describe Bearclaws do
 
       it "parses the file and returns an array of Bearclaws::Groups" do
         x = Bearclaws.analyze File.open('spec/support/input.csv'), 30
-        x.should be_a Array
+        expect(x).to be_a Array
       end
 
       it "each group should contain some charges" do
         x = Bearclaws.analyze File.open('spec/support/input.csv'), 30
         x.each { |y|
-          y.charges.should_not be_empty
+          expect(y.charges).to_not be_empty
         }
       end
 
@@ -53,7 +53,7 @@ describe Bearclaws do
         x.each { |y|
           names << y.name unless names.include?(y.name)
         }
-        x.count.should eq(names.count)
+        expect(x.count).to eq(names.count)
       end
 
       it "one of the group should be 'default'" do
@@ -64,7 +64,7 @@ describe Bearclaws do
             yep += 1
           end
         }
-        yep.should eq(1)
+        expect(yep).to eq(1)
       end
     end
   end

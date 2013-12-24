@@ -6,7 +6,7 @@ describe Bearclaws::Charge do
     it "are decided by AWSMAP" do
       r = Bearclaws::Charge.new
       Bearclaws::AWSMAP.each do |k, v|
-        r.should respond_to k
+        expect(r).to respond_to k
       end
     end
   end

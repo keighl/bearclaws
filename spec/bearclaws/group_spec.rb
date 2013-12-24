@@ -7,13 +7,13 @@ describe Bearclaws::Group do
 
     it "should hydrate the name attr" do
       x = Bearclaws::Group.new 'cheese', []
-      x.name.should eq('cheese'.to_sym)
+      expect(x.name).to eq('cheese'.to_sym)
     end
 
     it "should hydrate the charges attr" do
       charges = []
       x = Bearclaws::Group.new 'cheese', charges
-      x.charges.should eq(charges)
+      expect(x.charges).to eq(charges)
     end
   end
 
@@ -27,7 +27,7 @@ describe Bearclaws::Group do
         charges << r
       end
       x = Bearclaws::Group.new 'cheese', charges
-      x.total.should eq(100.00)
+      expect(x.total).to eq(100.00)
     end
   end
 
@@ -46,7 +46,7 @@ describe Bearclaws::Group do
 
       x = Bearclaws::Group.new 'cheese', charges
 
-      x.subtotals.should eq({
+      expect(x.subtotals).to eq({
         "product_0" => 20.00,
         "product_1" => 20.00,
         "product_2" => 20.00,
