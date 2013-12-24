@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/keighl/bearclaws.png?branch=master)](https://travis-ci.org/keighl/bearclaws)
 
+[![Code Climate](https://codeclimate.com/github/keighl/bearclaws.png)](https://codeclimate.com/github/keighl/bearclaws)
+
 Analyze the output of you AWS [cost allocation report](http://aws.amazon.com/about-aws/whats-new/2012/08/21/aws-billing-enables-cost-allocation-reports/). Group your costs by an arbitrary tag, like `client`.
 
 ## Installation
