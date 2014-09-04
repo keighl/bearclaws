@@ -24,7 +24,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Bearclaws::VERSION
 
-  gem.add_development_dependency('rspec')
+  gem.add_development_dependency('rspec', '2.14.1')
   gem.add_development_dependency('guard-rspec')
   gem.add_development_dependency('rb-fsevent')
   gem.add_development_dependency('rb-inotify')
